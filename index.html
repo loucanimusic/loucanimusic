@@ -13,65 +13,51 @@
       background-size: cover;
       margin: 0;
       padding: 0;
-    }
-
-    #top {
       scroll-behavior: smooth;
-    }
-
-    .fixed-header {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 10px 20px;
-      border-radius: 8px;
-    }
-
-    .title-link {
-      text-decoration: none;
-      color: white;
-    }
-
-    .title-link h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-
-    .subtitle {
-      font-size: 0.8em;
-      margin-top: 4px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
     }
 
     .container {
       max-width: 800px;
-      margin: 150px auto 0 auto;
-      padding: 40px 20px;
+      margin: 0 auto;
+      padding: 180px 20px 40px 20px;
       background-color: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: left;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 0.9em;
+      text-align: left;
+      margin-top: 4px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .description {
-      margin-top: 60px;
+      margin-top: 40px;
       margin-bottom: 60px;
-      position: relative;
-      transition: opacity 0.5s ease;
+      opacity: 1;
+      transition: opacity 1s ease;
     }
 
-    .bio {
-      margin-top: 40px;
+    body.scrolled .description {
+      opacity: 0;
+      pointer-events: none;
     }
 
     iframe {
       margin: 60px 0;
       width: 100%;
-      height: 352px;
+      height: 528px; /* 1.5x original 352px */
       border-radius: 12px;
+    }
+
+    .bio {
+      margin-top: 40px;
     }
 
     .socials {
@@ -91,6 +77,9 @@
       background: rgba(0, 0, 0, 0.6);
       padding: 8px 12px;
       border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
       transition: background 0.3s;
     }
 
@@ -98,26 +87,24 @@
       background: rgba(255, 255, 255, 0.2);
     }
 
-    body.scrolled .description {
-      opacity: 0;
-      pointer-events: none;
+    .socials img {
+      width: 20px;
+      height: 20px;
     }
   </style>
 </head>
 <body id="top">
 
-  <header class="fixed-header">
-    <a href="#top" class="title-link"><h1>Loucani</h1></a>
-    <p class="subtitle">Riverberi d'Anima</p>
-  </header>
-
   <div class="container">
+    <h1>Loucani</h1>
+    <p class="subtitle">Riverberi d'Anima</p>
+
     <div class="description">
       <p><strong>Loucani</strong> è un tentativo di lettura tra i riflessi di un prisma, nel bagliore urgente della scoperta. <br>
       Loucani è il residuo di chi cerca orientando nel fascio di luce il proprio stupore.</p>
     </div>
 
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6pAFgV8euIo2uZ6RC8K3Gf?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/artist/6pAFgV8euIo2uZ6RC8K3Gf?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
     <div class="bio">
       <h2>Bio</h2>
@@ -130,20 +117,17 @@
   </div>
 
   <div class="socials">
-    <a href="https://www.facebook.com/loucanioff" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/loucanimusic/" target="_blank">Instagram</a>
-    <a href="https://www.youtube.com/@mayimusic2031" target="_blank">YouTube</a>
-    <a href="https://open.spotify.com/intl-it/artist/6pAFgV8euIo2uZ6RC8K3Gf" target="_blank">Spotify</a>
-    <a href="https://linktr.ee/loucani" target="_blank">Linktree</a>
+    <a href="https://www.facebook.com/loucanioff" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="FB">Facebook</a>
+    <a href="https://www.instagram.com/loucanimusic/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="IG">Instagram</a>
+    <a href="https://www.youtube.com/@mayimusic2031" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YT">YouTube</a>
+    <a href="https://open.spotify.com/intl-it/artist/6pAFgV8euIo2uZ6RC8K3Gf" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" alt="Spotify">Spotify</a>
+    <a href="https://linktr.ee/loucani" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linktree.svg" alt="Linktree">Linktree</a>
   </div>
 
   <script>
     window.addEventListener('scroll', function () {
-      const description = document.querySelector('.description');
       if (window.scrollY > 100) {
         document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
       }
     });
   </script>
