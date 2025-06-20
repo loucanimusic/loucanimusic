@@ -217,13 +217,13 @@
   </div>
 
   <script>
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 100) {
-        document.body.classList.add('scrolled');
-      } else {
-        document.body.classList.remove('scrolled');
-      }
-    });
-  </script>
+let bioHidden = false;
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 100 && !bioHidden) {
+    document.body.classList.add('scrolled');
+    bioHidden = true;
+  }
+});
+</script>
 </body>
 </html>
