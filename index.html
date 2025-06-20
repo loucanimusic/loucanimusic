@@ -23,23 +23,39 @@
       background-color: rgba(0, 0, 0, 0.6);
     }
 
-    h1 {
-      font-size: 3em;
-      text-align: left;
+    header.fixed-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 30px;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    header.fixed-header a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header.fixed-header h1 {
+      font-size: 2em;
       margin: 0;
     }
 
-    .subtitle {
-      font-size: 0.9em;
-      text-align: left;
+    header.fixed-header .subtitle {
+      font-size: 0.8em;
       margin-top: 4px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     .description {
-      margin-top: 40px;
-      margin-bottom: 140px;
+      margin-top: 120px;
+      margin-bottom: 120px;
       opacity: 1;
       transition: opacity 1s ease;
     }
@@ -52,12 +68,36 @@
     iframe {
       margin: 60px 0;
       width: 100%;
-      height: 528px; /* 1.5x original 352px */
+      height: 528px;
       border-radius: 12px;
     }
 
     .bio {
       margin-top: 40px;
+    }
+
+    section#tour, section#press-kit {
+      margin-top: 80px;
+    }
+
+    .tour-group {
+      margin-bottom: 40px;
+    }
+
+    .tour-group h3 {
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #888;
+      padding-bottom: 5px;
+    }
+
+    .tour-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tour-group li {
+      margin-bottom: 8px;
     }
 
     .socials {
@@ -91,14 +131,20 @@
       width: 20px;
       height: 20px;
     }
+
+    figcaption {
+      margin-top: 8px;
+    }
   </style>
 </head>
 <body id="top">
 
-  <div class="container">
-    <h1>Loucani</h1>
+  <header class="fixed-header">
+    <a href="#top"><h1>Loucani</h1></a>
     <p class="subtitle">Riverberi d'Anima</p>
+  </header>
 
+  <div class="container">
     <div class="description">
       <p><strong>Loucani</strong> è un tentativo di lettura tra i riflessi di un prisma, nel bagliore urgente della scoperta. <br>
       Loucani è il residuo di chi cerca orientando nel fascio di luce il proprio stupore.</p>
@@ -106,14 +152,41 @@
 
     <iframe src="https://open.spotify.com/embed/artist/6pAFgV8euIo2uZ6RC8K3Gf?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-    <div class="bio">
-      <h2>Bio</h2>
-      <p>Nasce a Verona all’inizio degli anni Novanta e rende la sua cifra distintiva l’essere in cerca, aperto a contaminazioni. Si reca presto alla scoperta di paesi nordici, poi alla volta dell’America Latina, Africa sub-Sahariana ed Europa Mediterranea. Da questo movimento scaturiscono riletture e ibridazioni con culture e concezioni altre che si condensano in ambito musicale.</p>
+    <section id="tour">
+      <h2>Tour</h2>
+      <div class="tour-group">
+        <h3>Upcoming</h3>
+        <ul>
+          <li>12 Luglio 2025 – Matera, Casa Cava</li>
+          <li>3 Agosto 2025 – Torino, Spazio 211</li>
+        </ul>
+      </div>
+      <div class="tour-group">
+        <h3>Past</h3>
+        <ul>
+          <li>28 Maggio 2025 – Roma, LARGO Venue</li>
+          <li>15 Giugno 2025 – Milano, BASE</li>
+        </ul>
+      </div>
+    </section>
 
-      <p>Le riflessioni sulla musica partono dalla sfera intima declinate nella tradizione cantautorale occidentale; il ritmo, le armonie e le metriche si rifanno alla musica rituale e del Jazz, con rimandi Afro-latini, al sound Indipendente, moderno e references alla musica classica. Il dialogo che ne emerge interseca un’estetica sfumata nell’universo/multiverso popolato di significati aperti a chi vi presta ascolto.</p>
-
-      <p>La concezione sonora di Loucani deriva da una ricerca nell’accostamento di elementi intesi come esercizi, pratica tesa alla scoperta, utilizzando voci, corde pizzicate, legni, metalli, pelli e crini. Adopera le parole raccogliendo il lascito di Joni Mitchell, John Martyn, Maynard J. Keenan, passando per Luigi Tenco, Enzo Carella e Jacopo Incani.</p>
-    </div>
+    <section id="press-kit">
+      <h2>Rassegna Stampa</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1rem;">
+        <a href="https://diffusionimusicali.org/2024/07/26/aquiloni-e-il-nuovo-singolo-di-loucani/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;">
+          <img src="https://image.thum.io/get/width/700/https://diffusionimusicali.org/2024/07/26/aquiloni-e-il-nuovo-singolo-di-loucani/" alt="Diffusioni Musicali – Aquiloni" style="width:100%;border-radius:8px;">
+          <figcaption><strong>Diffusioni Musicali</strong><br>«Fuori su tutte le piattaforme <em>Aquiloni</em>, il singolo che alza il cielo della canzone d’autore di ricerca.»</figcaption>
+        </a>
+        <a href="https://www.radiocitylight.com/in-uscita-il-primo-album-omonimo-di-loucani/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;">
+          <img src="https://image.thum.io/get/width/700/https://www.radiocitylight.com/in-uscita-il-primo-album-omonimo-di-loucani/" alt="Radio City Light – Album" style="width:100%;border-radius:8px;">
+          <figcaption><strong>Radio City Light</strong><br>«Dieci tracce nate in quattro anni: il concept-album che trasforma la ricerca in suono.»</figcaption>
+        </a>
+        <a href="https://musicabile.tgcom24.it/2025/05/16/loucani-tra-poesia-e-migrazioni-il-debutto-del-cantautore-che-canta-le-api-e-lumanita/" target="_blank" rel="noopener" style="color:#fff;text-decoration:none;">
+          <img src="https://image.thum.io/get/width/700/https://musicabile.tgcom24.it/2025/05/16/loucani-tra-poesia-e-migrazioni-il-debutto-del-cantautore-che-canta-le-api-e-lumanita/" alt="TGCom24 – Musicabile" style="width:100%;border-radius:8px;">
+          <figcaption><strong>TGCom24 / Musicabile</strong><br>«Poesia, migrazioni e api: Loucani porta il cantautorato fuori dai confini.»</figcaption>
+        </a>
+      </div>
+    </section>
   </div>
 
   <div class="socials">
