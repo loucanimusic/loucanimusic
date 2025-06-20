@@ -41,6 +41,27 @@
       text-transform: uppercase;
     }
 
+    .sticky-title {
+      position: fixed;
+      top: 10px;
+      left: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 1.2em;
+      z-index: 9999;
+      display: none;
+    }
+
+    .sticky-title a {
+      color: white;
+      text-decoration: none;
+    }
+
+    body.scrolled .sticky-title {
+      display: block;
+    }
+
     .description {
       margin-top: 200px;
       margin-bottom: 120px;
@@ -58,10 +79,6 @@
       width: 100%;
       height: 528px;
       border-radius: 12px;
-    }
-
-    .bio {
-      margin-top: 40px;
     }
 
     section#tour, section#press-kit {
@@ -86,6 +103,26 @@
 
     .tour-group li {
       margin-bottom: 8px;
+    }
+
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .press-article img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .press-article figcaption {
+      font-size: 0.9em;
+    }
+
+    .press-article {
+      margin-top: 40px;
     }
 
     .socials {
@@ -120,22 +157,19 @@
       height: 20px;
     }
 
-    figcaption {
-      margin-top: 8px;
-    }
-
-    .press-article img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-
-    .press-article {
-      margin-top: 40px;
+    footer {
+      text-align: center;
+      font-size: 0.75em;
+      margin: 40px 0 20px 0;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body id="top">
+  <div class="sticky-title">
+    <a href="#top">Loucani</a>
+  </div>
+
   <div class="container">
     <div class="title-block">
       <h1><a href="#top" style="color:white;text-decoration:none;">Loucani</a></h1>
@@ -168,18 +202,21 @@
 
     <section id="press-kit">
       <h2>Rassegna Stampa</h2>
-      <div class="press-article">
-        <img src="arena loucani.jpeg" alt="L'Arena - Articolo Loucani">
-        <figcaption><strong>L'Arena</strong><br>«Loucani tra canzone d'autore e sperimentazione»</figcaption>
-      </div>
-
-      <div class="press-article">
-        <a href="https://lostingroove.com/2025/06/09/un-disco-per-chi-ha-nostalgia-di-luoghi-mai-visti-loucani/" target="_blank" style="color:#fff;text-decoration:none;">
+      <div class="press-grid">
+        <div class="press-article">
+          <img src="arena loucani.jpeg" alt="L'Arena - Articolo Loucani">
+          <figcaption><strong>L'Arena</strong><br>«Loucani tra canzone d'autore e sperimentazione»</figcaption>
+        </div>
+        <a class="press-article" href="https://lostingroove.com/2025/06/09/un-disco-per-chi-ha-nostalgia-di-luoghi-mai-visti-loucani/" target="_blank" style="color:#fff;text-decoration:none;">
           <img src="https://image.thum.io/get/width/700/https://lostingroove.com/2025/06/09/un-disco-per-chi-ha-nostalgia-di-luoghi-mai-visti-loucani/" alt="Lost In Groove – Loucani">
           <figcaption><strong>Lost In Groove</strong><br>«Un disco per chi ha nostalgia di luoghi mai visti.»</figcaption>
         </a>
       </div>
     </section>
+
+    <footer>
+      Ph by Cinzia Amoruso
+    </footer>
   </div>
 
   <div class="socials">
@@ -194,6 +231,8 @@
     window.addEventListener('scroll', function () {
       if (window.scrollY > 100) {
         document.body.classList.add('scrolled');
+      } else {
+        document.body.classList.remove('scrolled');
       }
     });
   </script>
